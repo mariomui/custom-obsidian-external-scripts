@@ -498,3 +498,4 @@ MigrationBackup/
 
 
 **/*/.vscode
+.DS_Store
