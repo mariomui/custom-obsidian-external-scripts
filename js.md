@@ -9,6 +9,39 @@ This [[folder-page]] list the folders and its files recursively in flattened for
 > [!warning] There is some work here with the dataviewjs code holding a prototype version of a basic rendering recursion api 
 
 - [ ] #_todo/long-term/to-refactor/on-notes/regarding-duplicated-dataviewjs-code Replace the duplicated code with a single transclusion line.
+* [ ] Prefix defintion notes with `the` 
+  * Document capitalization convention
+  * I want to know that a particular note is a defintion note but I also want to know if the content has been touched. Normally, i would leave note titles lower capitlized, and have that indicate that the note is a work in progress.
+  * I think i like having it lowercased as it removes the wip_ status prefix , simplifying the system but without that, i still require differentiation between Definition notes and non definition notes.
+  * 🔍 Candidates for [[Definition-note-taxon]] vs [[Structural-note-supertaxon]] vs wip_ notes ⬇️
+    * 🎲Prefixing Style:
+      * 💁 Prefix with a dot...
+        * `interim_.external-guide-note-taxon` -> .external-guide-note-taxon -> External-guide-note-taxon
+          * Cons
+            * Retroactive renaming of all taxons based off [[Definition-note-taxon]], R * X * ( N + (M extend N) + (O extend N) ...) work.
+      * 💁 🤔 Prefix using `the` 
+        * Pros and cons, [[ibidem]]
+        * Unignorable con: 
+          * a strong prefix using indefinite or definite articles requires outside systems to use it in a singular way. (rigidity) 🧪🈴 
+            * 🔎  `the-board` vs `board`
+              * I am completing the `board`
+              * I am completing the `the-board`
+              * I am completing the `board`s
+              * I am completing `the-board`s 
+                * if i change my mind on the prefix, the mutation requires me to prescriptively reach outside the note title (increasing work by a ton)
+      * 💁 Prefix using `(def.)`
+        * 
+    * 🎲 [[Domain-specific-language]] Style:
+      * 💁 Encode in existing taxon...
+        * `interim_internal-guide-note-taxon` -> external-guide-note-taxon -> External-guide-note-taxon
+          * Automatically assume that external guide notes are definition notes?
+          * Pros:
+            * No change to internal system.
+          * Cons: 
+            * Increase in note taking cognitive load at an N x M (note x link) degree. 
+  * :summary: 
+   * The candidate solutions are pretty bad. 
+   * I will remove the feature and keep capitization for note taxons extending the definition taxon.
 
 
 # = 
