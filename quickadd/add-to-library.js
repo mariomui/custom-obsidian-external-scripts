@@ -12,24 +12,39 @@ const settings = {
 };
 
 module.exports = async (internals) => {
-  await entry.call(this, internals);
+  const { obsidian } = internals;
+
+  try {
+    await entry.call(this, internals);
+  } catch (err) {
+    new obsidian.Notice(err);
+    return null;
+  }
   return internals;
 };
 
 async function entry(internals) {
-  const files = await internals.app.vault.getMarkdownFiles();
-  const { suggester } = internals.quickAddApi;
+  {
+    const { obsidian } = internals;
 
-  const filteredFiles = files.filter(filterByPath);
+    const files = await internals.app.vault.getMarkdownFiles();
+    const { suggester } = internals.quickAddApi;
+
+    const filteredFiles = files.filter(filterByPath);
+
+    const pickedFile = await suggester(suggestByBaseName, filteredFiles);
+
+    if (pickedFile) {
+      internals.variables.pickedFileName = pickedFile.basename;
+      internals.variables.pickedFilePath = pickedFile.path;
+    }
+  }
+
   function filterByPath({ path }) {
     return search_terms.some((search_term) => path.includes(search_term));
   }
 
-  const pickedFile = await suggester(suggestByBaseName, filteredFiles);
   function suggestByBaseName({ basename }) {
     return basename;
   }
-
-  internals.variables.pickedFileName = pickedFile.basename;
-  internals.variables.pickedFilePath = pickedFile.path;
 }
