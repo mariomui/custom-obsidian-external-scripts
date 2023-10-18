@@ -2,18 +2,18 @@ const { vault } = this.app;
 const { moment } = window;
 
 const getFolder = () => 'A_fleeting_notes';
-
+const rolloverMarkCharacter = '❗';
 async function rollover(
   folder = getFolder(),
   format = 'YYYY-MM-DD',
   tasksHeader = '- [ ] ==TASKS==',
-  rolloverMarkCharacter = '❗'
+  rolloverMarkCharacter = '😃'
 ) {
   const todos = await getAllUnfinishedTodos(
     getLastDailyNote(folder, format),
     tasksHeader
   );
-  const note_content = todos.join('❗\n');
+  const note_content = todos.join(`${rolloverMarkCharacter}\n`);
   return note_content;
 }
 

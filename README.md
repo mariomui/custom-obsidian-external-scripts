@@ -6,7 +6,7 @@ The [[js]],aka [[js|__README__js]] is the more up to date version but far less r
 
 Externally lifecycle loaded scripts injected by plugins to enhance obsidianmd quality of life
 
-This repository/folder houses scripts designed to augment the plugins used in the [[ObsidianMD-app]], provided that those plugins expose their api.
+This repository/folder houses scripts designed to augment the plugins used in the [[ObsidianMD-app,]], provided that those plugins expose their api.
 
 # =
 

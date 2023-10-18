@@ -4,7 +4,7 @@ tag: _nts-v1/structural-note
 ---
 # -
 
-This [[folder-page]] list the folders and its files recursively in flattened form. This is needed because files with extensions that are not `.md` are not displayed. 
+This [[folder-page,vis-Noteshippo,]] list the folders and its files recursively in flattened form. This is needed because files with extensions that are not `.md` are not displayed. 
 
 > [!warning] There is some work here with the dataviewjs code holding a prototype version of a basic rendering recursion api 
 
@@ -13,14 +13,14 @@ This [[folder-page]] list the folders and its files recursively in flattened for
   * Document capitalization convention
   * I want to know that a particular note is a defintion note but I also want to know if the content has been touched. Normally, i would leave note titles lower capitlized, and have that indicate that the note is a work in progress.
   * I think i like having it lowercased as it removes the wip_ status prefix , simplifying the system but without that, i still require differentiation between Definition notes and non definition notes.
-  * 🔍 Candidates for [[Definition-note-taxon]] vs [[Structural-note-supertaxon]] vs wip_ notes ⬇️
+  * 🔍 Candidates for [[Definition-spec,ad-finem-Noteshippo-taxonomy,]] vs [[Structural-note-supertaxon]] vs wip_ notes ⬇️
     * 🎲Prefixing Style:
       * 💁 Prefix with a dot...
         * `interim_.external-guide-note-taxon` -> .external-guide-note-taxon -> External-guide-note-taxon
           * Cons
-            * Retroactive renaming of all taxons based off [[Definition-note-taxon]], R * X * ( N + (M extend N) + (O extend N) ...) work.
+            * Retroactive renaming of all taxons based off [[Definition-spec,ad-finem-Noteshippo-taxonomy,]], R * X * ( N + (M extend N) + (O extend N) ...) work.
       * 💁 🤔 Prefix using `the` 
-        * Pros and cons, [[ibidem]]
+        * Pros and cons, [[,aka-ibidem]]
         * Unignorable con: 
           * a strong prefix using indefinite or definite articles requires outside systems to use it in a singular way. (rigidity) 🧪🈴 
             * 🔎  `the-board` vs `board`
@@ -31,7 +31,7 @@ This [[folder-page]] list the folders and its files recursively in flattened for
                 * if i change my mind on the prefix, the mutation requires me to prescriptively reach outside the note title (increasing work by a ton)
       * 💁 Prefix using `(def.)`
         * 
-    * 🎲 [[Domain-specific-language]] Style:
+    * 🎲 [[Domain-specific-language,]] Style:
       * 💁 Encode in existing taxon...
         * `interim_internal-guide-note-taxon` -> external-guide-note-taxon -> External-guide-note-taxon
           * Automatically assume that external guide notes are definition notes?
@@ -77,6 +77,7 @@ function main() {
         const {files} = await genListByFolderPath(
           folder_path
         );
+        console.log({files})
         var _files = _files.concat(files)
       } catch(err) {
         console.error(err);
@@ -171,14 +172,14 @@ function isArray(candidate) {
 }
 
 
-///////
-
 /**
         child, //value 
         li,  // container
         isExpandList, // alwways expand list really
         "list", // context
          depth + 1 // escape hatch
+         
+@desc recursive renderer of lists.
 **/
 async function genRenderValue(
   val,
@@ -228,12 +229,9 @@ async function genRenderValue(
     }
   }
 }
-
-function manuLiCss() {
- return { cls: "dataview-result-list-li" }
-}
-
-// i hate this fucntion.
+/**
+@desc LIterally attaches a span literal to the subcontainer right away.
+**/
 async function genRenderCompactMarkdown(
     markdown, // string,
     container, // HTMLElement,
@@ -245,5 +243,9 @@ async function genRenderCompactMarkdown(
     markdown, subcontainer, sourcePath, component
   );
   
+}
+
+function manuLiCss() {
+ return { cls: "dataview-result-list-li" }
 }
 ```
