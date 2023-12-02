@@ -26,7 +26,7 @@ async function getAllUnfinishedTodos(abstractFile, tasksHeader) {
   console.log({ matchedContents });
   if (!_matchedContents) return [];
   const unfinishedTodos = Array.from(
-    _matchedContents.matchAll(/\t*- \[ \].*/g)
+    _matchedContents.matchAll(/[\s\t][-\*] \[ \].*/g)
   );
 
   return unfinishedTodos;
