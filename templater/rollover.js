@@ -7,7 +7,7 @@ async function rollover(
   folder = getFolder(),
   format = 'YYYY-MM-DD',
   tasksHeader = '- [ ] ==TASKS==',
-  rolloverMarkCharacter = '😃'
+  rolloverMarkCharacter = rolloverMarkCharacter
 ) {
   const todos = await getAllUnfinishedTodos(
     getLastDailyNote(folder, format),
