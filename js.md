@@ -8,12 +8,12 @@ This [[folder-page,vis-Noteshippo,]] list the folders and its files recursively 
 
 > [!warning] There is some work here with the dataviewjs code holding a prototype version of a basic rendering recursion api 
 
-- [ ] #_todo/long-term/to-refactor/on-note/regarding-duplicated-dataviewjs-code Replace the duplicated code with a single transclusion line.
+- [ ] #_todo/080-long-term/to-refactor/on-note/regarding-duplicated-dataviewjs-code Replace the duplicated code with a single transclusion line.
 * [ ] Prefix defintion notes with `the` 
   * Document capitalization convention
   * I want to know that a particular note is a defintion note but I also want to know if the content has been touched. Normally, i would leave note titles lower capitlized, and have that indicate that the note is a work in progress.
   * I think i like having it lowercased as it removes the wip_ status prefix , simplifying the system but without that, i still require differentiation between Definition notes and non definition notes.
-  * 🔍 Candidates for [[Definition-spec,vis-Noteshippo-taxonomy,]] vs [[Structural-note-supertaxon]] vs wip_ notes ⬇️
+  * 🔍 Candidates for [[Definition-spec,vis-Noteshippo-taxonomy,]] vs [[structural-note,vis-Note-taxonomy,etc]] vs wip_ notes ⬇️
     * 🎲Prefixing Style:
       * 💁 Prefix with a dot...
         * `interim_.external-guide-note-taxon` -> .external-guide-note-taxon -> External-guide-note-taxon

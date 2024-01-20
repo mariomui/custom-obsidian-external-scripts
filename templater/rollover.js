@@ -2,13 +2,15 @@ const { vault } = this.app;
 const { moment } = window;
 
 const getFolder = () => 'A_fleeting_notes';
-const rolloverMarkCharacter = '❗';
+
 async function rollover(
   folder = getFolder(),
   format = 'YYYY-MM-DD',
-  tasksHeader = '- [ ] ==TASKS==',
-  rolloverMarkCharacter = rolloverMarkCharacter
+  tasksHeader = '- [ ] ==TASKS=='
 ) {
+  // globals cannot pull
+  const rolloverMarkCharacter = '❗';
+
   const todos = await getAllUnfinishedTodos(
     getLastDailyNote(folder, format),
     tasksHeader
