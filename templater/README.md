@@ -1,8 +1,17 @@
-# Readme
 
-- ORIGINAL CODE: https://gist.github.com/lenalebt/8e58aa21392c388d8c7d65bad3206e35
+# -
+
+- [ ] Come up with a format for readmes ➕ 2024-10-12
+
+- # Readme
+  - ORIGINAL CODE: https://gist.github.com/lenalebt/8e58aa21392c388d8c7d65bad3206e35
 
 - :reference: https://github.com/lumoe/obsidian-rollover-daily-todos/issues/63
+
+## 01-Meta
+
+
+# =
 
 ## Summary
 
@@ -16,7 +25,7 @@ In order to combat this, the solution is to place a tp script to scrape the todo
 
 ## Examples
 
-Demo below ⬇️
+ø–Demo below ⬇️
 ![demo](./demo-of-rollover.png)
 
 ## Implementation
