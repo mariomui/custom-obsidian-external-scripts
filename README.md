@@ -1,6 +1,6 @@
 # -
 
-This note is an [[interim_external-guide-note-taxon]] that is generated to provide the [[github]] public with an idea of what this folder does.
+This note is an [[wip--,aka-external-guide-specced-note]] that is generated to provide the [[github]] public with an idea of what this folder does.
 
 The [[js]],aka [[js|__README__js]] is the more up to date version but far less readable.
 
