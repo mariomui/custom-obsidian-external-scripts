@@ -15,7 +15,14 @@ async function rollover(
     getLastDailyNote(folder, format),
     tasksHeader
   );
-  const note_content = todos.join(`${rolloverMarkCharacter}\n`);
+  const note_content = todos
+    .map((todo) => {
+      if (todo.slice(-1) === rolloverMarkCharacter) {
+        return todo + rolloverMarkCharacter;
+      }
+      return todo + ' ' + rolloverMarkCharacter;
+    })
+    .join('');
   return note_content;
 }
 
@@ -25,10 +32,11 @@ async function getAllUnfinishedTodos(abstractFile, tasksHeader) {
   const regex = /==TASKS==\s*-+\s*\n([\s\S]*)/g;
   const matchedContents = regex.exec(contents);
   const _matchedContents = matchedContents.at(0);
-  console.log({ matchedContents });
+  console.log({ contents, matchedContents });
   if (!_matchedContents) return [];
   const unfinishedTodos = Array.from(
-    _matchedContents.matchAll(/[\s\t][-\*] \[ \].*/g)
+    _matchedContents.matchAll(/[\s\t].*[-\*] \[ \].*/g)
+    // _matchedContents.matchAll(/[\s\t][-\*] \[ \].*/g)
   );
 
   return unfinishedTodos;
