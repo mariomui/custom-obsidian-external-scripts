@@ -1,6 +1,6 @@
 ---
 Aliases: ["__README__js", js]
-tag: _noteshippo/v1-spec/_structural
+tag: _noteshippo/∑≠--v1-spec/_structural
 ---
 # -
 
@@ -9,44 +9,11 @@ This [[folder-page,vis-Noteshippo,]] list the folders and its files recursively 
 > [!warning] There is some work here with the dataviewjs code holding a prototype version of a basic rendering recursion api
 
 * [ ] #_todo/80-longterm--/to-refactor/upon-codelet/regarding-duplicated-dataviewjs-code Replace the duplicated code with a single transclusion line.
-* [ ] Prefix defintion notes with `the`
-  * Document capitalization convention
-  * I want to know that a particular note is a defintion note but I also want to know if the content has been touched. Normally, i would leave note titles lower capitlized, and have that indicate that the note is a work in progress.
-  * I think i like having it lowercased as it removes the wip_ status prefix , simplifying the system but without that, i still require differentiation between Definition notes and non definition notes.
-  * 🔍 Candidates for [[Definition-spec,vis-Noteshippo-taxonomy,]] vs [[structural-note-taxon,etc]] vs wip_ notes ⬇️
-    * 🎲Prefixing Style:
-      * 💁 Prefix with a dot...
-        * `interim_.external-guide-note-taxon` -> .external-guide-note-taxon -> External-guide-note-taxon
-          * Cons
-            * Retroactive renaming of all taxons based off [[Definition-spec,vis-Noteshippo-taxonomy,]], R *X* ( N + (M extend N) + (O extend N) ...) work.
-      * 💁 🤔 Prefix using `the`
-        * Pros and cons, [[,aka-ibidem]]
-        * Unignorable con:
-          * a strong prefix using indefinite or definite articles requires outside systems to use it in a singular way. (rigidity) 🧪🈴
-            * 🔎  `the-board` vs `board`
-              * I am completing the `board`
-              * I am completing the `the-board`
-              * I am completing the `board`s
-              * I am completing `the-board`s
-                * if i change my mind on the prefix, the mutation requires me to prescriptively reach outside the note title (increasing work by a ton)
-      * 💁 Prefix using `(def.)`
-        *
-    * 🎲 [[Domain-specific-language,]] Style:
-      * 💁 Encode in existing taxon...
-        * `interim_internal-guide-note-taxon` -> external-guide-note-taxon -> External-guide-note-taxon
-          * Automatically assume that external guide notes are definition notes?
-          * Pros:
-            * No change to internal system.
-          * Cons:
-            * Increase in note taking cognitive load at an N x M (note x link) degree.
-  * :summary:
-  * The candidate solutions are pretty bad.
-  * I will remove the feature and keep capitization for note taxons extending the definition taxon.
 
 # =
 * [ ] #_todo/to-process/upon-codelet/regarding-dataviewjs/regarding-replacement-for-dataview-list  #_todo/42-priority-high--/to-extract/on-a-dataviewjs-codelet Lift and refactor the code below into its own view file.
   * 🤔 If you the folder name by active file, the retrigger somtimes gets the activeFile! the dv refreshes while your cursor is on another page. This really means that this thing Really requires parameterization a
-  * [[~viewfn-for-listing-folder-items]]
+    * [[~viewfn-for-listing-folder-items]]
 
 ```dataviewjs
 const {vault, plugins, workspace, fileManager, metadataCache} = this.app;
@@ -136,10 +103,10 @@ function renderFiles(file_paths) {
       );
       /* return metadataCache.fileToLinktext(
         vf, ""
-      );
-      */ // dumb api that generates the shortname from a vfile
+      ); */ 
+      // dumb api that generates the shortname from a vfile
       return fileManager.generateMarkdownLink(vf, "")
-    })
+  })
 
   dv.list(links);
 }
